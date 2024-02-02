@@ -7,7 +7,7 @@ Our vision is to establish a versatile mentorship platform that is recognized as
 
 Employing these technologies in our project offers a comprehensive full-stack solution.
 
-- react.js - front-end
+- react.js - frontend
 - node.js - evented I/O for the backend
 - Express - fast node.js network app framework 
 - mongoDB - databse
