@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/userRoutes');
 
 var doetenv = require('dotenv');
 doetenv.config();
@@ -29,6 +29,7 @@ const clientOptions = { serverApi: { version: '1', strict: true, deprecationErro
 
 
 
+
 async function run() {
   try {
     // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
@@ -37,6 +38,7 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
+    console.log(error);
     await mongoose.disconnect();
   }
 }
@@ -64,5 +66,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
