@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/userRoutes');
+var usersRouter = require('./routes/users');
 
 var doetenv = require('dotenv');
 doetenv.config();
@@ -43,10 +43,6 @@ async function run() {
   }
 }
 run().catch(console.dir);
-
-
-
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
