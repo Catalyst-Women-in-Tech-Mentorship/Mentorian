@@ -29,6 +29,7 @@ const clientOptions = { serverApi: { version: '1', strict: true, deprecationErro
 
 
 
+
 async function run() {
   try {
     // Create a Mongoose client with a MongoClientOptions object to set the Stable API version
@@ -37,14 +38,11 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
+    console.log(error);
     await mongoose.disconnect();
   }
 }
 run().catch(console.dir);
-
-
-
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -64,5 +62,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
 
 module.exports = app;
