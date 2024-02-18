@@ -9,8 +9,8 @@ const MentorianImg = () => {
       <div className="mask">
       <img className="into-img" src={mentorian1} alt="mentorian1" /> </div>
         <div className="content">
+        <h1>Empower. Inspire. Mentor.</h1>
           <p>MENTORIAN</p>
-          <h1>slogan goes here</h1>
           <div>
             <Link to="/login" className="btn">
               Login

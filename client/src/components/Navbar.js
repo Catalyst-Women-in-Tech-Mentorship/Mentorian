@@ -7,8 +7,17 @@ const Navbar = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
 
+  const [color, setColor]=useState(false);
+  const changeColor =()=>{
+    if (window.scrollY >=100){
+      setColor(true);
+    }else{
+      setColor(false);
+    }
+  }
+  window.addEventListener("scroll", changeColor);
   return (
-    <div className="header">
+    <div className={color ? "header header-bg" : "header"}>
       <Link to="/">
         <h1>Mentorian</h1>
       </Link>
@@ -28,9 +37,9 @@ const Navbar = () => {
       </ul>
       <div className="menuicon" onClick={handleClick}>
         {click ? (
-          <FaBars size={20} style={{ color: "#fff" }} />
-        ) : (
           <FaTimes size={20} style={{ color: "#fff" }} />
+        ) : (
+          <FaBars size={20} style={{ color: "#fff" }} />
         )}
       </div>
     </div>
